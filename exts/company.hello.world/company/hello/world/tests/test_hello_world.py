@@ -10,7 +10,9 @@ import omni.kit.ui_test as ui_test
 import company.hello.world
 
 
-# Having a test class dervived from omni.kit.test.AsyncTestCase declared on the root of module will make it auto-discoverable by omni.kit.test
+# Having a test class dervived from omni.kit.test.AsyncTestCase declared on the root of module.
+# It will make it auto-discoverable by omni.kit.test
+
 class Test(omni.kit.test.AsyncTestCase):
     # Before running each test
     async def setUp(self):
@@ -25,7 +27,6 @@ class Test(omni.kit.test.AsyncTestCase):
     async def test_hello_public_function(self):
         result = company.hello.world.some_public_function(4)
         self.assertEqual(result, 256)
-
 
     @omni.kit.test.omni_test_registry(guid="4626d574-659f-4a85-8958-9fa8588fbce3")
     async def test_window_button(self):
